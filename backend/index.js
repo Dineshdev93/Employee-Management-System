@@ -4,19 +4,19 @@ require("./db/Conectionstr")
 const Emp = require('./db/Employe')
 const app = express();
 const cors = require('cors')
-app.use(cors)
-// app.use(express.json())
+app.use(cors())
+app.use(express.json())
 // debugger
 app.get('/',async(req, resp) => {
    let result = await Emp.find();
    if(result.length > 0){
-      resp.send({result : result})
+      resp.send( result)
    } else{
-      resp.send({result : "No record"})
+      resp.send( "No record")
    }
    
-   console.log(msg);
-   return true;
+   // console.log(result);
+   
 })
 
-app.listen(6000)
+app.listen(4000)

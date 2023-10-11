@@ -2,10 +2,11 @@
 const mongoose = require('mongoose')
 
 const employe = new mongoose.Schema({
-    emp : String,
-    post : String,
+    employee : String,
+    level : String,
+     salary : String,
     email : String,
-    salary : String,
-    vill : String
+    city : String,
+    Pinno : String
 })
   module.exports = mongoose.model("empdatas" , employe);
