@@ -1,4 +1,4 @@
-# school_project
+# Employee-management-system
 This project is a mern stack projec
 
 Used Technology : 
