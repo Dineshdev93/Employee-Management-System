@@ -5,5 +5,5 @@ Used Technology :
 React.js , Mongodb ,express.js and nodejs
 For css  : 
 Tailwind css framework
-# For starting frontend = npm run server 
-# For starting backend = npm run start
+# For starting frontend = npm run start
+# For starting backend = npm run server
