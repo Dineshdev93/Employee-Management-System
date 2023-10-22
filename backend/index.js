@@ -2,6 +2,7 @@
 const express = require('express')
 require("./db/Conectionstr")
 const Emp = require('./db/Employe')
+const SignupSchema = require("./db/Signup")
 const app = express();
 const cors = require('cors')
 app.use(cors())
@@ -40,6 +41,13 @@ app.get("/getone/:id",async(req,res)=>{
 app.put("/edit/:id",async(req,res)=>{
    let result = await Emp.updateOne({_id : req.params.id},{$set : req.body},)
    res.send(result);
+})
+
+// Api for sign up
+app.post("/signup",async(req,res)=>{
+    let result =  new SignupSchema(req.body)
+    let data = await result.save()
+    res.send(data);
 })
 
 app.listen(4000)

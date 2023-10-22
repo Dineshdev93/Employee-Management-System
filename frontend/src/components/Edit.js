@@ -13,6 +13,7 @@ export default function Edit() {
   const [pinno, setPinno] = useState("");
   const param = useParams()
   const navigate = useNavigate()
+
   useEffect(()=>{
    getdata()
   },[])
@@ -107,7 +108,7 @@ export default function Edit() {
           <button className="mt-2 text-white   p-2 text-sm border-separate border bg-blue-400 rounded-lg"
              onClick={edit}
           >
-            Edit
+            Update
           </button>
         </section>
 

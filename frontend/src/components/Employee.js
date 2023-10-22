@@ -24,8 +24,7 @@ function Employee() {
 
   return (
     <main >
-       <Link to={'/addemp'}className='ml-4 border border-seprate bg-blue-400 p-2 rounded-lg text-white'>Add Employee</Link>
-      <h1 className='text-3xl font-bold bg-white text-center text-black p-3 mt-3 m-3 border'>Employee Management system</h1>
+          <h1 className='text-3xl  font-bold bg-white text-center text-black p-3 mt-3 m-3 border'>Employee Management system</h1>
       <div className="flex flex-col m-2" >
         <table className=' text-center border border-separate border-slate-400 mt-2 rounded-sm'>
           <thead>
@@ -58,7 +57,8 @@ function Employee() {
                 <td className='border bg-lime-50'>{item.salary}</td>
                 <td className='border bg-lime-50'>{item.city}</td>
                 <td className='border bg-lime-50'>{item.pinno} </td>
-                <td className='border bg-red-300 font-mono'><button
+                <td className='border bg-red-300 font-mono'>
+                  <button
                   onClick={() => deltetpost(item._id)}
                 >Delete</button></td>
               <td className='border bg-green-200 text-cyan font-thin'><Link to={"/edit/"+item._id}>Edit</Link></td>
