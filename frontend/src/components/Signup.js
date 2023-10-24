@@ -1,7 +1,8 @@
 import React from "react";
 import signup from "../images/signup.jpg";
-import  Validator  from "validator";
+import { useNavigate,NavLink} from 'react-router-dom'
 const Signup = () => {
+  const navigate = useNavigate()
   const [name, setName] = React.useState("");
   const [surname, setSurname] = React.useState("");
   const [mobileno, setMobileno] = React.useState("");
@@ -12,7 +13,7 @@ const Signup = () => {
     if (
       name.length === 0 ||
       surname.length === 0 ||
-      mobileno.length === 0 ||
+      mobileno.length === 0 || 
       email.length === 0 ||
       password.length === 0
     ) {
@@ -27,25 +28,20 @@ const Signup = () => {
       });
       data = await data.json();
       alert("Your regestration is succesfully done !");
+      localStorage.setItem("user",JSON.stringify(data))
       console.log(data);
+      
     }
   };
-
-  // const  validate = (val) => {
-  //      if(Validator.isStrongPassword(val,{
-  //         minLength : 6 , minLowercase : 1,
-  //         minNumbers : 1 , minSymbols : 1
-  //      }))
-  //      {
-  //         setPassword(password)
-  //      }
-  //      else {
-  //         setPassword("Week Password")
-  //      }
-  // }
-
+        const userlogedin = localStorage.getItem("user")
+      React.useEffect(()=>{
+         if(userlogedin){
+          navigate("/")
+         }
+      })
+  
   return (
-    <main className="flex  ">
+    <main className="flex flex-wrap ">
       <section>
         <img
           src={signup}
@@ -118,20 +114,19 @@ const Signup = () => {
         </label>:"" }
         <input
           type="text"
-          placeholder="Enater your password"
+          placeholder="Enter your password"
           className="border border-separate py-2 w-72 rounded-lg mt-2"
           value={password}
-          onChange={(e) =>setPassword(e.target.value)}
+          onChange={(e) =>setPassword(e.target.value)} 
         />
-        {/* {password.length === "" ? null : (
-          <span style={{ font: "bold", color: "red" }}>{password}</span>
-        )} */}
+       
         <button
           className="border border-separate bg-blue-500 text-white mt-3 rounded-lg p-1 font-thin"
           onClick={register}
         >
           Signup
         </button>
+        <span className={"text-blue-500  font-thin mt-2"}><NavLink to={"/login"} > Already have an account,Plz login </NavLink></span>
       </section>
     </main>
   );
