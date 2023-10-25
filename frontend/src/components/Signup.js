@@ -1,6 +1,7 @@
 import React from "react";
 import signup from "../images/signup.jpg";
 import { useNavigate,NavLink} from 'react-router-dom'
+import 'react-toastify/dist/ReactToastify.css';
 const Signup = () => {
   const navigate = useNavigate()
   const [name, setName] = React.useState("");
@@ -27,10 +28,11 @@ const Signup = () => {
         },
       });
       data = await data.json();
-      alert("Your regestration is succesfully done !");
+      // alert("Your regestration is succesfully done !");
       localStorage.setItem("user",JSON.stringify(data))
       console.log(data);
       navigate("/")
+
     }
   };
         const userlogedin = localStorage.getItem("user")
@@ -126,6 +128,7 @@ const Signup = () => {
         >
           Signup
         </button>
+        
         <span className={"text-blue-500  font-thin mt-2"}><NavLink to={"/login"} > Already have an account,Plz login </NavLink></span>
       </section>
     </main>

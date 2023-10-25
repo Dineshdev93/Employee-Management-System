@@ -21,7 +21,7 @@ function Addemp() {
             }
         })
          data = await data.json()
-         alert("Employee Added Succesfully")
+        
          navigate("/")
          console.log(data);
     }

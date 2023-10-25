@@ -7,7 +7,7 @@ export default function Login() {
   const [error, setError] = React.useState(false);
   const navigate = useNavigate()
   const handlelogin =async () => {
-    // console.log(email, password);
+  
     if (email.length === 0 || password.length === 0) {
       setError(true);
     }
@@ -22,6 +22,9 @@ export default function Login() {
        result = await result.json()
        console.log(result);
        localStorage.setItem("user",JSON.stringify(result))
+      
+        navigate("/")
+       
     }
   };
      const userlogedin = localStorage.getItem("user")
@@ -29,7 +32,7 @@ export default function Login() {
         if(userlogedin){
           navigate("/")
         }
-      },[])
+      })
 
   return (
     <main className="flex flex-wrap px-40">

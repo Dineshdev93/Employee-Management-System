@@ -1,3 +1,4 @@
+import React from "react";
 import Employee from "./components/Employee";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addemp from "./components/Addemp";
@@ -6,10 +7,11 @@ import Edit from "./components/Edit";
 import Signup from "./components/Signup";
 import Privateroute from "./components/Privateroute";
 import Login from "./components/Login"
-import React from "react";
+import Notify from "./components/Notify";
 function App() {
   return (
     <main>
+      <Notify/>
       <BrowserRouter>
         <div className="mt-4 ">
           <Navbar />
