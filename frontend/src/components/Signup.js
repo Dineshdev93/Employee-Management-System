@@ -30,7 +30,7 @@ const Signup = () => {
       alert("Your regestration is succesfully done !");
       localStorage.setItem("user",JSON.stringify(data))
       console.log(data);
-      
+      navigate("/")
     }
   };
         const userlogedin = localStorage.getItem("user")

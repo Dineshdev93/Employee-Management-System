@@ -26,15 +26,6 @@ const Navbar = () => {
             Add New Employee
           </Link>
         </li>
-        
-        <li>
-          <Link
-            to={"/login"}
-            className="p-2   m-3  font-mono text-white border border-seprate rounded-lg"
-          >
-            Log in
-          </Link>
-        </li>
         <li>{ userlogedin ?
           <Link
             to={"/signup"}
@@ -42,16 +33,21 @@ const Navbar = () => {
             onClick={logout}
           >
             Logout
-          </Link> :  <Link
+          </Link> : 
+          <> 
+            <Link
+            to={"/login"}
+            className="p-2   m-3  font-mono text-white border border-seprate rounded-lg"
+          >
+            Log in
+          </Link>
+          <Link
             to={"/signup"}
             className=" p-2 m-3  font-mono  text-white border border-seprate rounded-lg  "
           >
             Signup
-          </Link>
+          </Link> </>
             }</li>
-        
-         
-        
       </ul>
     </div>
   );
