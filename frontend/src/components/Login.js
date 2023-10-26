@@ -22,13 +22,8 @@ export default function Login() {
        result = await result.json()
        console.log(result);
 
-       const userlogedin = localStorage.setItem("user",JSON.stringify(result))
-          if(userlogedin){
-                navigate("/")
-           }
-           else{
-            alert("invalid username or password")
-           }
+        localStorage.setItem("user",JSON.stringify(result))
+        navigate("/")
        
     }
   };
