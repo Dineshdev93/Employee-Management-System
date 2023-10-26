@@ -20,7 +20,7 @@ const Signup = () => {
     ) {
       setError(true);
     } else {
-      let data = await fetch("http://localhost:4000/signup", {
+      let data = await fetch("http://54.162.174.22:4000/signup", {
         method: "Post",
         body: JSON.stringify({ name, surname, mobileno, email, password }),
         headers: {

@@ -19,7 +19,7 @@ export default function Edit() {
   },[])
 
   const getdata =async () => {
-    let result = await fetch(`http://localhost:4000/getone/${param.id}`)
+    let result = await fetch(`http://54.162.174.22:4000/getone/${param.id}`)
     result = await result.json();
     setDate(result.date)
     setEmployee(result.employee)
@@ -32,7 +32,7 @@ export default function Edit() {
   }
 
   const edit =async()=>{
-   let result = await fetch(`http://localhost:4000/edit/${param.id}`,{
+   let result = await fetch(`http://54.162.174.22:4000/edit/${param.id}`,{
     method : 'Put',
     body : JSON.stringify({date,employee,level,post,salary,email,city,pinno}),
     headers : {
