@@ -1,12 +1,13 @@
 // nodemon start command = npm run servessr
 const express = require('express')
-require("./db/Conectionstr")
+const connectDb = require("./db/Conectionstr")
 const Emp = require('./db/Employe')
 const SignupSchema = require("./db/Signup")
 const app = express();
 const cors = require('cors')
 app.use(cors())
 app.use(express.json())
+connectDb()
 // debugger
 app.get('/', async (req, resp) => {
    let result = await Emp.find();
