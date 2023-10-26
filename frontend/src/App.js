@@ -7,11 +7,10 @@ import Edit from "./components/Edit";
 import Signup from "./components/Signup";
 import Privateroute from "./components/Privateroute";
 import Login from "./components/Login"
-import Notify from "./components/Notify";
 function App() {
   return (
     <main>
-      <Notify/>
+      
       <BrowserRouter>
         <div className="mt-4 ">
           <Navbar />

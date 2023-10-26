@@ -2,6 +2,7 @@ import React from "react";
 import { useState ,useEffect } from "react";
 import mern from "../images/mern.png";
 import {useParams,useNavigate } from 'react-router-dom'
+import {ToastContainer,toast  } from 'react-toastify'
 export default function Edit() {
   const [date, setDate] = useState("");
   const [employee, setEmployee] = useState("");
@@ -41,8 +42,7 @@ export default function Edit() {
    })
    result = await result.json()
    console.warn(result);
-   alert("Data upadte succesfully")
-    navigate("/")
+   navigate("/")
   }
 
   return (
@@ -110,6 +110,7 @@ export default function Edit() {
           >
             Update
           </button>
+          <ToastContainer/>
         </section>
 
         <section className="mt-10 ml-24">
