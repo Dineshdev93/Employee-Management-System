@@ -12,7 +12,7 @@ export default function Login() {
       setError(true);
     }
     else {
-       let result = await fetch("http://54.162.174.22:4000/login",{
+       let result = await fetch("http://localhost:4000/login",{
         method : "Post",
         body : JSON.stringify({email,password}),
         headers : {

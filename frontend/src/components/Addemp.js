@@ -13,7 +13,7 @@ function Addemp() {
       const navigate = useNavigate()
     const Save = async() => {
         console.log({employee,level,salary,email,city,pinno});
-        let data = await fetch("http://54.162.174.22:4000/post",{
+        let data = await fetch("http://localhost:4000/post",{
            method : "Post",
            body : JSON.stringify({date,employee,level,post,salary,email,city,pinno}),
             headers : {

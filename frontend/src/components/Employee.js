@@ -6,13 +6,13 @@ function Employee() {
     getapi()
   }, [])
   const getapi = async () => {
-    let empdata = await fetch("http://54.162.174.22:4000")
+    let empdata = await fetch("http://localhost:4000")
     empdata = await empdata.json();
     setdata(empdata)
   }
 
   const deltetpost = async (id) => {
-    let result = await fetch(`http://54.162.174.22:4000/delete/${id}`, {
+    let result = await fetch(`http://localhost:4000/delete/${id}`, {
       method: "delete"
     })
     result = await result.json();
