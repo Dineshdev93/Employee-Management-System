@@ -30,7 +30,7 @@ function Employee() {
   // For search products logic
   const filtersearch = (e) => {
     const eve = e.target.value;
-    setSearchval(data.filter(f=>(f.employee,f.level).toLowerCase().includes(eve)))  
+    setSearchval(data.filter(f=>(f.employee).toLowerCase().includes(eve)))  
   }
 
   //set image
@@ -73,7 +73,7 @@ function Employee() {
         </h1>
         </div>
         <div className="">
-             <input type="text"onChange={filtersearch} placeholder="search by level and name" className="p-2 rounded-lg border w-60 shadow-lg"/>
+             <input type="text"onChange={filtersearch} placeholder="search by name" className="p-2 rounded-lg border w-60 shadow-lg"/>
             
         </div>
       </div>
