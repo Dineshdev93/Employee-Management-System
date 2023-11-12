@@ -29,8 +29,12 @@ function Employee() {
 
   // For search products logic
   const filtersearch = (e) => {
-    const eve = e.target.value;
-    setSearchval(data.filter(f=>(f.employee).toLowerCase().includes(eve)))  
+    if(e.key === "Enter"){
+      const eve = e.target.value;
+      e.target.value=""
+      setSearchval(data.filter(f=>(f.employee).toLowerCase().includes(eve)))  
+    }
+   
   }
 
   //set image
@@ -66,15 +70,16 @@ function Employee() {
         </span>
       </div> */}
       {/* For search products*/}
-      <div className=" flex justify-between p-3 mt-3 m-3 border">
+      <div className=" flex flex-wrap justify-between p-3 mt-3 m-3 border">
         <div>
         <h1 className="text-3xl  font-bold bg-white  text-black">
           Employee Management system
         </h1>
         </div>
-        <div className="">
-             <input type="text"onChange={filtersearch} placeholder="search by name" className="p-2 rounded-lg border w-60 shadow-lg"/>
-            
+        <div className="border p-2 w-96 rounded-lg ">
+        <i class="fa-solid fa-magnifying-glass"></i>
+             &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"onKeyDown={filtersearch} placeholder="search by employee "
+             className="focus:outline-none " />
         </div>
       </div>
 

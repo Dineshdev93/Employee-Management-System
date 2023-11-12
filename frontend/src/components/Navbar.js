@@ -11,7 +11,7 @@ const Navbar = () => {
   }
   return (
     <div >
-      <ul className="bg-slate-900 p-3 flex flex-wrap w-auto px-6  ">
+      <ul className="  flex flex-wrap bg-slate-900 p-3 w-auto px-6  ">
         <li>
           <Link
             to={"/"}
